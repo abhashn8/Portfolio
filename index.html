@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <div class="wrapper">
         <nav>
             <h1>Abhash Niroula</h1>
@@ -17,7 +18,10 @@
                 <li><a href="#home" onClick="return false;" class="active">Home</a></li>
                 <li><a href="#about" onClick="return false;">About Me</a></li>
                 <li><a href="#portfolio" onClick="return false;">Skills</a></li>
+                <li><a href="#projects" onClick="return false;">Projects</a></li>
                 <li><a href="#contact" onClick="return false;">Contact</a></li>
+
+
             </ul>
 
             <p>&copy; 2024 Abhash Niroula</p>
@@ -27,7 +31,7 @@
         <main>
             <section class="home">
                 <div class="avatar">
-                    <img src="linkedin.jpeg" />
+                    <img src="media/linkedin.jpg" />
                 </div>
                 <div class="content">
                     <h2>Who am I?</h2>
@@ -36,7 +40,7 @@
                     <ul>
                         <li>
                             <a href="https://github.com/abhashn8" target="_blank" rel="noreferrer">
-                                <img class ='png-imgs' src="github.png" alt="">
+                                <img class ='png-imgs' src="media/github.png" alt="">
                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 16 16" width="32">
                                     <path
                                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.
@@ -51,7 +55,7 @@
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/abhash-niroula/" target="_blank" rel="noreferrer">
-                                <img class ='png-imgs' src="linkedin.png" alt="">
+                                <img class ='png-imgs' src="media/linkedin.png" alt="">
                                 <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <path
                                         d="M92 0C41.4 0 0 41.4 0 92s41.4 92 92 92h2.7H92c-49.6 0-90.6 41-90.6 90.6 0 15.8 3.9 30.7 10.7 43.6v.5h-.5 
@@ -110,7 +114,7 @@
             </section>
             <section class="about">
                 <div class="large-image">
-                    <img src="linkedin.jpeg" />
+                    <img src="media/linkedin.jpg" />
                 </div>
                 <div class="content">
                     <h2>A <span>little</span> about me</h2>
@@ -132,12 +136,15 @@
             <section class="portfolio">
                 <h2>My Skills</h2>
                 <div class="photos">
-                    <img src="a.png" />
-                    <img src="b.png" />
-                    <img src="c.png" />
-                    <img src="python.png" />
+                    <img src="media/a.png" />
+                    <img src="media/b.png" />
+                    <img src="media/c.png" />
+                    <img src="media/python.png" />
 
                 </div>
+            </section>
+            <section class="projects">
+                
             </section>
             <section class="contact">
                 <h2> Let's Get In Touch</h2>
@@ -157,9 +164,28 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </iframe>
             </section>
+            
+
         </main>
     </div>
-    <script type="text/javascript" src="logic.js"></script>
+    <script type="text/javascript" src="logic.js">
+        document.addEventListener('DOMContentLoaded', function () {
+    // Hide all sections initially
+    document.querySelectorAll("main section").forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Display the section if there's a hash in the URL
+    const hash = window.location.hash;
+    if (hash) {
+        const section = document.querySelector(hash);
+        if (section) {
+            section.style.display = 'flex'; // Display the matching section
+        }
+    }
+});
+
+    </script>
 </body>
 
 </html>
